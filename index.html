@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="./assets/js /main.js"></script>
+    <title>Evaluation</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Résultat de l'évaluation</h1>
+        <form>
+            <fieldset>
+                <legend>Ajouter une note</legend>
+                <div>
+                    <label>Nom Prénom : </label>
+                    <input type="text" v-model="fullname" placeholder="ajoute nom prénom">
+                </div>
+                <div>
+                    <label>Note :</label>
+                    <input type="number" v-model="grade" min="0" max="20">
+                </div>
+
+                <button @click="addNewStudent">Ajouter</button>
+            </fieldset>
+
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Notes</th>
+                    <th>Obtenu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="student of students">
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.lastName }}</td>
+                    <td>{{ student.grade }}</td>
+                    <td v-if="student.grade > moyenneEliminatoire">Oui</td>
+                    <td v-else>Non</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <ul>
+            <li>Nombre d'étudiants : {{ getNbStudent }} </li>
+            <li>Moyenne de la clmasse : {{ getMoyenne }}</li>
+            <li>Nombre d'étudiants au dessus de la moyenne : {{ getUnderMoyenne}}</li>
+        </ul>
+    </div>
+</body>
+
+</html>

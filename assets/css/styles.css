@@ -1,0 +1,51 @@
+:root {
+    --color1: #30343F;
+    --color2: #FAFAFF;
+    --color3: #E4D9FF;
+    --color4: #374479;
+    --color5: #6E7799;
+    --color6: #C490D1;
+    --border: 1px solid;
+}
+
+body {
+    background-color: var(--color1);
+    color: var(--color3);
+    font-family: sans-serif;
+}
+table{
+
+    background-color: var(--color2);
+}
+th,td{
+    width: 50px;
+    padding: 10px;
+    background-color: var(--color4);
+}
+
+
+form{
+    width: 600px;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: block;
+    
+}
+#app{
+    border: var(--border);
+    padding: 20px;
+}
+label{
+    margin-right: 50px;
+    width: 150px;
+    display: inline-block;
+
+}
+input{
+    width: 200px;
+    margin: 10px;
+}
+div{
+    display: inline-block;
+
+}
